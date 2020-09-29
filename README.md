@@ -7,7 +7,7 @@
 Actually, there are two separated apps. The Client which serves the FrontEnd (using React), and the API (in Node/Express).
 
 ## Start Application
-- Run npm i inside of your root folder to download the 
+- Run npm i inside of client and api to get the packages for each of these folders 
 - Run npm start to start the application it should open a react application on port 3000 on your local computer
 
 
