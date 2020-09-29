@@ -8,6 +8,9 @@
   "scripts": {
     "client": "cd client && npm start",
     "server": "cd api && npm start",
+    "clientInstall": "cd client && npm run-script build",
+    "serverInstall": "cd api && npm install",
+    "install": "concurrently \"npm run clientInstall\" \"npm run serverInstall\" ",
     "start": "concurrently \"npm run client\" \"npm run server\" ",
     "eject": "react-scripts eject"
   }
