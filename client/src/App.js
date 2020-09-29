@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import logo from './bigmac.jpg';
 
 
 class App extends Component {
@@ -114,21 +115,25 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-            <br/>
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <h1 className="App-title">Big Mac Problem</h1>
+                </header>
+                <p className="App-intro">{this.state.apiResponse}</p>
                 <h3>You are in {this.state.UserCountry}</h3>
                 <div>Please Enter an amount of money in your local currency</div>
-                <input value={this.state.userMoney} onChange={(e) => this.handelMoneyInput(e)} />
+                <input placeholder="Amount of Currency" value={this.state.userMoney} onChange={(e) => this.handelMoneyInput(e)} />
                 <br/>
                 <br/>
-                <div>You could buy {this.state.UserBigMacsTheyCanBuy} Big Macs in your country</div>
-                <div>Your Dollar Purchasing Parity (PPP) is {this.state.UserPPP}</div>
+                <div>You could buy <b>{this.state.UserBigMacsTheyCanBuy}</b> Big Macs in your country</div>
+                <div>Your Dollar Purchasing Parity (PPP) is <b>{this.state.UserPPP}</b></div>
                 <div>This is a simple lookup to the table</div>
                 <br/>
                 <button onClick={(e) => this.getNewRandomCountry()}>Change Random Country</button>
                 <br/>
                 <h3>Random Country: {this.state.RandomCountry}</h3>
-                <div>You could buy {this.state.RandomCountryNumOfBigMacs} of Big Macs in {this.state.RandomCountry} with {this.state.UserMoney}</div>
-                <div>Your {this.state.UserMoney} is worth about {this.state.RandomCountryMoneyAmount} in {this.state.RandomCountry}</div>
+                <div>You could buy <b>{this.state.RandomCountryNumOfBigMacs}</b> of Big Macs in  <b>{this.state.RandomCountry}</b> with <b>{this.state.UserMoney}</b> <b>{this.state.UserCountry}</b> Currency</div>
+                <div>Your <b>{this.state.UserMoney}</b> <b>{this.state.UserCountry}</b> Currency is worth about <b>{this.state.RandomCountryMoneyAmount}</b> in <b>{this.state.RandomCountry}</b></div>
             </div>
         );
     }
