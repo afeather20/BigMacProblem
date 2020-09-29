@@ -1,0 +1,14 @@
+{
+  "name": "big_mac_application",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^1.0.0"
+  },
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "cd api && npm start",
+    "start": "concurrently \"npm run client\" \"npm run server\" ",
+    "eject": "react-scripts eject"
+  }
+}
